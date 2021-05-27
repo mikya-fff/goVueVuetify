@@ -2,6 +2,8 @@
 
 ## Vue
 
+Vue 是一套用于构建用户界面的**渐进式框架**
+
 https://cn.vuejs.org/
 
 ### ubuntu安装
@@ -34,14 +36,18 @@ sudo cnpm install -g @vue/cli
 
 ## Vuerity
 
+Vuetify 是建立在Vue.js之上的完备的界面框架
+
 https://vuetifyjs.com/zh-Hans/
 
 ### 安装
 
-1.先创建一个vue项目
+1.先创建一个vue项目 --- `vue create vuetify-demo`
+
+**项目的名称不能包含大写**
 
 ```bash
-vue create vuetify-demo
+$ vue create vuetify-demo
 
 #根据提示选择相应的选项,输出如下
 
@@ -95,10 +101,10 @@ added 9 packages from 5 contributors in 4.382s
 
 ```
 
-2.安装vuetify插件
+2.安装vuetify插件 --- `vue add vuetify`
 
 ```bash
-vue add vuetify
+$ vue add vuetify
 
 #输出内容如下
 
@@ -138,7 +144,7 @@ added 13 packages from 8 contributors, removed 2 packages and updated 1 package 
  vuetify  Support Vuetify: https://github.com/sponsors/johnleider
 ```
 
-3.启动一个vue应用
+3.启动一个vue应用 --- `npm run serve`
 
 ```bash
 $ cd vuetify-demo
@@ -161,3 +167,19 @@ npm run build
 ```
 
 生成的文件在`dist`目录下,直接把这个目录放到服务器上的即可。
+
+## 问题记录
+
+- Error: ENOSPC: System limit for number of file watchers reached
+
+  ```bash
+  执行：vim /etc/sysctl.conf，添加如下内容：
+  
+  fs.inotify.max_user_watches=524288
+  
+  输入：wq
+  
+  在命令行执行：sysctl -p
+  ```
+
+  
