@@ -22,8 +22,9 @@
 
       <v-list>
         <v-list-item
-          v-for="[icon, text] in links"
+          v-for="[icon, text, to] in links"
           :key="icon"
+          :to="to"
           link
         >
           <v-list-item-icon>
@@ -57,13 +58,10 @@
 <script>
   export default {
     data: () => ({
-      cards: ['Today', 'Yesterday'],
       drawer: null,
       links: [
-        ['mdi-inbox-arrow-down', 'Inbox'],
-        ['mdi-send', 'Send'],
-        ['mdi-delete', 'Trash'],
-        ['mdi-alert-octagon', 'Spam'],
+        ['mdi-inbox-arrow-down', '首页', '/'],
+        ['mdi-send', '关于', '/about'],
       ],
     }),
   }
